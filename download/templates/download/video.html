@@ -1,0 +1,19 @@
+{% extends 'download/base.html' %}
+
+{% block content %}
+    <h1> Watch Videos </h1>
+        
+        {% for video in video %}
+    <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+                    <video controls width="100%">
+                        <source src="{{ video.clip.url }}" type="video/mp4" >
+                    </video>
+                    <h2>{{ video.title }} </h2>
+            </div>
+          </div>
+          <br>
+          {% endfor %}
+          
+{% endblock content %}

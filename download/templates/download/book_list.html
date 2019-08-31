@@ -1,0 +1,26 @@
+{% extends 'download/base.html' %}
+
+{% block content %}
+    <h1> Book List </h1>
+
+    <table class="table">              
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">TITLE</th>
+                <th scope="col">AUTHOR</th>
+                <th scope="col">BOOk</th>
+              </tr>
+            </thead>
+            {% for book in books %}
+            <tbody>   
+              <tr>       
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td><button type="button" class="btn btn-default"><a href="{{ book.pdf.url }}">download</a></button></td>
+              </tr>
+            </tbody>
+              {% endfor %}
+          </table>
+          
+{% endblock content %}

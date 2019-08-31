@@ -1,0 +1,23 @@
+{% extends 'download/base.html' %}
+
+{% block content %}
+    <h1> Music Download </h1>
+        
+    
+
+    {% for music in music %}
+
+    <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h4>{{ music.title }} </h4>
+                 <h4>{{ music.artist }}</h4>
+                    
+                        <audio controls>
+                            <source src="{{ music.song.url }}" type="audio/mpeg">
+                        </audio>
+            </div>
+          </div>
+    
+    {% endfor %}
+{% endblock content %}
